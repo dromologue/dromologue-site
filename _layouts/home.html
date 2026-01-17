@@ -15,9 +15,9 @@ layout: default
 {{ content }}
 
 {% if site.theme_config.show_footer == true %}
-  <footer class="home-footer">
-    {% include horizontal_list.html collection=site.data.home.footer_entries %}
-  </footer>
+  <div class="contact">
+    <a href="mailto:justin@dromologue.com">Get in touch</a>
+  </div>
 {% endif %}
 
 {% if site.theme_config.show_copyright == true %}
