@@ -1,18 +1,15 @@
 title: Dromologue
 author: Justin
 url: https://dromologue.com
-description: >
-  Velocity and Value. That is all.
+description: Velocity and Value. That is all.
 
 permalink: /:slug
 
-favicon: "./favicon.ico"
+favicon: "/favicon.ico"
 
 theme_config:
   appearance: "dark"
   appearance_toggle: false
-  back_home_text: "home"
-  date_format: "%Y-%m-%d"
   show_description: true
   show_navbar: false
   show_footer: true
@@ -21,14 +18,8 @@ theme_config:
   show_blog: false
   show_old_projects: false
   show_misc_list: false
-  show_reading_time: false
-  show_tags: false
 
 highlighter: rouge
 
 sass:
-  style: :compressed
-
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
+  style: compressed
