@@ -1,0 +1,109 @@
+// Dromologue custom styles
+
+// Override dark theme colors for true black
+@mixin dark-appearance {
+  html, body {
+    --headings: #f0f0f0;
+    --links: #f0f0f0;
+    --highlight: #333;
+    --bg: #0a0a0a;
+    --bg-secondary: #111;
+    --text: #999;
+    --text-secondary: #666;
+    --code-text: #f0f0f0;
+    --share-text: #666;
+  }
+}
+
+html[data-theme="dark"] { @include dark-appearance; }
+
+// Stealth banner
+.stealth-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0.6rem 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #666;
+  background-color: var(--bg);
+  border-bottom: 1px solid #1a1a1a;
+  z-index: 100;
+}
+
+// Home header centered layout
+.home-header {
+  text-align: center;
+  padding-top: 4rem;
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    color: var(--headings);
+  }
+}
+
+// Divider line
+.divider {
+  width: 40px;
+  height: 1px;
+  background-color: #333;
+  margin: 1.5rem auto;
+}
+
+// Tagline
+.tagline {
+  font-size: 1.1rem;
+  color: var(--text);
+  font-weight: 300;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+// Footer
+.home-footer {
+  text-align: center;
+  margin-top: 3rem;
+
+  a {
+    color: var(--headings);
+    text-decoration: none;
+    font-size: 0.95rem;
+    letter-spacing: 0.1em;
+    border-bottom: 1px solid #444;
+    padding-bottom: 2px;
+    transition: border-color 0.3s ease;
+
+    &:hover {
+      border-color: var(--headings);
+    }
+  }
+}
+
+// Copyright
+.copyright {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #555;
+  margin-top: 4rem;
+}
+
+// Center the main wrapper
+.w {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+// Hide the dashed separator from moonwalk
+.dashed {
+  display: none;
+}
