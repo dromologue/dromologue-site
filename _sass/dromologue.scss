@@ -215,14 +215,17 @@ body {
 
 // ---- Footer strip ----
 .home-foot {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  flex-wrap: wrap;
-  gap: 1rem 2rem;
   margin-top: 4.5rem;
   padding-top: 1.6rem;
   border-top: 1px solid #ECEAE4;
+
+  .home-foot-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+  }
 
   .software {
     text-align: left;
@@ -235,6 +238,8 @@ body {
   .software-label { margin-bottom: 0; }
   .software-links a:first-child { margin-left: 0; }
   .copyright { margin: 0; }
+
+  .meaning { margin-top: 1.6rem; }
 }
 
 // -------------------------------------------- //

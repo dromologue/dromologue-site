@@ -15,11 +15,6 @@ layout: default
       AI will be adopted faster than organisations can structurally transform to fully exploit it. The winners will transform <span class="accent">how they operate</span> with AI, not just what they build with it.
     </h1>
 
-    <details class="meaning">
-      <summary>What is a dromologue?</summary>
-      <p class="meaning-body">Dromologue joins two Greek roots: <em>dromos</em>, speed, and <em>logos</em>, meaning. The purpose of this business is to enable business speed that produces meaningful results for employees, customers and stakeholders.</p>
-    </details>
-
     <nav class="lead-nav">
       <a href="/about/">About</a>
       <a href="/perspective/">Our Perspective</a>
@@ -55,14 +50,21 @@ layout: default
 </div>
 
 <footer class="home-foot">
-  <div class="software">
-    <span class="software-label">Software</span>
-    <span class="software-links">
-      <a href="https://concepto.dromologue.com">Concepto<span class="sw-desc">: a game</span></a>
-      <a href="https://conceptmapper.dromologue.com/">Concept Mapper<span class="sw-desc">: a tool</span></a>
-    </span>
+  <div class="home-foot-row">
+    <div class="software">
+      <span class="software-label">Software</span>
+      <span class="software-links">
+        <a href="https://concepto.dromologue.com">Concepto<span class="sw-desc">: a game</span></a>
+        <a href="https://conceptmapper.dromologue.com/">Concept Mapper<span class="sw-desc">: a tool</span></a>
+      </span>
+    </div>
+    {% if site.theme_config.show_copyright == true %}
+      <div class="copyright">&copy; 2026 Dromologue</div>
+    {% endif %}
   </div>
-  {% if site.theme_config.show_copyright == true %}
-    <div class="copyright">&copy; 2026 Dromologue</div>
-  {% endif %}
+
+  <details class="meaning">
+    <summary>What is a dromologue?</summary>
+    <p class="meaning-body">Dromologue joins two Greek roots: <em>dromos</em>, speed, and <em>logos</em>, meaning. The purpose of this business is to enable business speed that produces meaningful results for employees, customers and stakeholders.</p>
+  </details>
 </footer>
