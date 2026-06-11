@@ -4,44 +4,65 @@ layout: default
 
 <div class="stealth-banner">still in stealth mode</div>
 
-<header class="home-header">
-  <img class="brand-mark" src="/assets/images/dromologue-mark.png" alt="Dromologue mark" width="72" />
-  <h1>{{ site.title }}</h1>
-  <div class="divider"></div>
-  {% if site.theme_config.show_description == true %}
-    <p class="tagline">{{ site.description }}</p>
-  {% endif %}
+<div class="home-split">
+  <section class="home-lead">
+    <a class="lead-brand" href="{{ '/' | relative_url }}">
+      <img class="lead-mark" src="{{ '/assets/images/dromologue-mark.png' | relative_url }}" alt="Dromologue" width="40" />
+      <span class="lead-word">Dromologue</span>
+    </a>
 
-  <details class="meaning">
-    <summary>What is a dromologue?</summary>
-    <p class="meaning-body">Dromologue joins two Greek roots: <em>dromos</em>, speed, and <em>logos</em>, meaning. The purpose of this business is to enable business speed that produces meaningful results for employees, customers and stakeholders.</p>
-  </details>
-</header>
+    <h1 class="lead-thesis">
+      AI will be adopted faster than organisations can structurally transform to fully exploit it. The winners will transform <span class="accent">how they operate</span> with AI, not just what they build with it.
+    </h1>
 
-{{ content }}
+    <details class="meaning">
+      <summary>What is a dromologue?</summary>
+      <p class="meaning-body">Dromologue joins two Greek roots: <em>dromos</em>, speed, and <em>logos</em>, meaning. The purpose of this business is to enable business speed that produces meaningful results for employees, customers and stakeholders.</p>
+    </details>
 
-<nav class="main-nav">
-  <a href="/about/">About Us</a>
-  <a href="/perspective/">Our Perspective</a>
-  <a href="/services/">Services</a>
-  <a href="https://organisationalprompts.ai" target="_blank" rel="noopener">Substack</a>
-  <a href="/blog/">Blog</a>
-</nav>
+    <nav class="lead-nav">
+      <a href="/about/">About</a>
+      <a href="/perspective/">Our Perspective</a>
+      <a href="/services/">Services</a>
+      <a href="mailto:justin@dromologue.com">Get in touch</a>
+    </nav>
+  </section>
 
-{% if site.theme_config.show_footer == true %}
-  <div class="contact">
-    <a href="mailto:justin@dromologue.com">Get in touch</a>
-  </div>
-{% endif %}
+  <aside class="home-writing">
+    <span class="writing-eyebrow">Writing</span>
 
-<div class="software">
-  <span class="software-label">Software</span>
-  <span class="software-links">
-    <a href="https://concepto.dromologue.com">Concepto<span class="sw-desc">: a game</span></a>
-    <a href="https://conceptmapper.dromologue.com/">Concept Mapper<span class="sw-desc">: a tool</span></a>
-  </span>
+    <a class="writing-stream" href="https://organisationalprompts.ai" target="_blank" rel="noopener">
+      Organisational Prompts <span class="ext">&#8599;</span>
+      <span class="writing-note">Long-form essays on technology, change and leadership</span>
+    </a>
+
+    <div class="writing-rule"></div>
+
+    {% if site.posts.size > 0 %}
+      <ul class="writing-posts">
+        {% for post in site.posts limit: 3 %}
+          <li>
+            <span class="wp-date">{{ post.date | date: "%-d %b %Y" }}</span>
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+      <a class="writing-all" href="/blog/">All posts &rarr;</a>
+    {% else %}
+      <p class="writing-empty">Posts coming soon.</p>
+    {% endif %}
+  </aside>
 </div>
 
-{% if site.theme_config.show_copyright == true %}
-  <div class="copyright">&copy; 2026 Dromologue</div>
-{% endif %}
+<footer class="home-foot">
+  <div class="software">
+    <span class="software-label">Software</span>
+    <span class="software-links">
+      <a href="https://concepto.dromologue.com">Concepto<span class="sw-desc">: a game</span></a>
+      <a href="https://conceptmapper.dromologue.com/">Concept Mapper<span class="sw-desc">: a tool</span></a>
+    </span>
+  </div>
+  {% if site.theme_config.show_copyright == true %}
+    <div class="copyright">&copy; 2026 Dromologue</div>
+  {% endif %}
+</footer>
