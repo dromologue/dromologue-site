@@ -15,12 +15,7 @@ layout: default
       AI will be adopted faster than organisations can structurally transform to fully exploit it. The winners will transform <span class="accent">how they operate</span> with AI, not just what they build with it.
     </h1>
 
-    <nav class="lead-nav">
-      <a href="/about/">About</a>
-      <a href="/perspective/">Our Perspective</a>
-      <a href="/services/">Services</a>
-      <a href="mailto:justin@dromologue.com">Get in touch</a>
-    </nav>
+    <p class="lead-strap">We help you become AI native.</p>
   </section>
 
   <aside class="home-writing">
@@ -50,21 +45,39 @@ layout: default
 </div>
 
 <footer class="home-foot">
-  <div class="home-foot-row">
-    <div class="software">
-      <span class="software-label">Software</span>
-      <span class="software-links">
-        <a href="https://concepto.dromologue.com">Concepto<span class="sw-desc">: a game</span></a>
-        <a href="https://conceptmapper.dromologue.com/">Concept Mapper<span class="sw-desc">: a tool</span></a>
-      </span>
-    </div>
-    {% if site.theme_config.show_copyright == true %}
-      <div class="copyright">&copy; 2026 Dromologue</div>
-    {% endif %}
+  <div class="foot-sections">
+    <nav class="foot-col">
+      <span class="foot-label">Practice</span>
+      <a href="/about/">About</a>
+      <a href="/perspective/">Our Perspective</a>
+      <a href="/services/">Services</a>
+    </nav>
+
+    <nav class="foot-col">
+      <span class="foot-label">Writing</span>
+      <a href="https://organisationalprompts.ai" target="_blank" rel="noopener">Organisational Prompts <span class="ext">&#8599;</span></a>
+      <a href="/blog/">Blog</a>
+    </nav>
+
+    <nav class="foot-col">
+      <span class="foot-label">Software</span>
+      <a href="https://concepto.dromologue.com">Concepto</a>
+      <a href="https://conceptmapper.dromologue.com/">Concept Mapper</a>
+    </nav>
+
+    <nav class="foot-col">
+      <span class="foot-label">Connect</span>
+      <a href="mailto:justin@dromologue.com">Get in touch</a>
+    </nav>
   </div>
 
-  <details class="meaning">
-    <summary>What is a dromologue?</summary>
-    <p class="meaning-body">Dromologue joins two Greek roots: <em>dromos</em>, speed, and <em>logos</em>, meaning. The purpose of this business is to enable business speed that produces meaningful results for employees, customers and stakeholders.</p>
-  </details>
+  <div class="foot-bottom">
+    {% if site.theme_config.show_copyright == true %}
+      <span class="copyright">&copy; 2026 Dromologue</span>
+    {% endif %}
+    <details class="meaning">
+      <summary>What is a dromologue?</summary>
+      <p class="meaning-body">Dromologue joins two Greek roots: <em>dromos</em>, speed, and <em>logos</em>, meaning. The purpose of this business is to enable business speed that produces meaningful results for employees, customers and stakeholders.</p>
+    </details>
+  </div>
 </footer>

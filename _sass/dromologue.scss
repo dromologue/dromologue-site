@@ -104,23 +104,13 @@ body {
   .accent { color: var(--bronze); }
 }
 
-.lead-nav {
-  margin-top: 2.75rem;
-
-  a {
-    display: inline-block;
-    color: var(--mid);
-    text-decoration: none;
-    font-size: 0.78rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    margin: 0 1.4rem 0.6rem 0;
-    padding-bottom: 3px;
-    border-bottom: 1px solid transparent;
-    transition: color 0.25s ease, border-color 0.25s ease;
-
-    &:hover { color: var(--navy); border-color: var(--bronze); }
-  }
+// Strapline: the offer, beneath the thesis.
+.lead-strap {
+  margin: 1.6rem 0 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--navy);
 }
 
 // ---- Right: writing column ----
@@ -213,33 +203,67 @@ body {
 
 .writing-empty { color: var(--grey); font-style: italic; font-size: 0.9rem; }
 
-// ---- Footer strip ----
+// ---- Footer: sectioned nav + legal row ----
 .home-foot {
-  margin-top: 4.5rem;
-  padding-top: 1.6rem;
+  margin-top: 5.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid #ECEAE4;
+}
+
+.foot-sections {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, max-content));
+  justify-content: start;
+  gap: 2.5rem 4.5rem;
+}
+
+@media (max-width: 680px) {
+  .foot-sections { grid-template-columns: repeat(2, 1fr); gap: 2.25rem 2rem; }
+}
+
+.foot-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  .foot-label {
+    color: var(--grey);
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  a {
+    color: var(--mid);
+    text-decoration: none;
+    font-size: 0.92rem;
+    line-height: 1.4;
+    padding: 0.3rem 0;
+    transition: color 0.2s ease;
+
+    .ext { color: var(--bronze); font-size: 0.8em; }
+    &:hover { color: var(--navy); }
+  }
+}
+
+// Legal row: copyright with the etymology disclosure beside it.
+.foot-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 1.75rem;
+  margin-top: 3rem;
+  padding-top: 1.4rem;
   border-top: 1px solid #ECEAE4;
 
-  .home-foot-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    flex-wrap: wrap;
-    gap: 1rem 2rem;
-  }
-
-  .software {
-    text-align: left;
+  .copyright {
     margin: 0;
-    display: flex;
-    align-items: baseline;
-    flex-wrap: wrap;
-    gap: 0.4rem 1.1rem;
+    color: var(--grey);
+    font-size: 0.78rem;
   }
-  .software-label { margin-bottom: 0; }
-  .software-links a:first-child { margin-left: 0; }
-  .copyright { margin: 0; }
 
-  .meaning { margin-top: 1.6rem; }
+  .meaning { margin: 0; }
 }
 
 // -------------------------------------------- //
@@ -338,45 +362,6 @@ body {
 
     em { color: var(--navy); font-style: italic; }
   }
-}
-
-// -------------------------------------------- //
-//  Software (footer): Concepto, Concept Mapper
-// -------------------------------------------- //
-.software {
-  text-align: center;
-  margin-top: 3.5rem;
-
-  .software-label {
-    display: block;
-    color: var(--grey);
-    font-size: 0.7rem;
-    letter-spacing: 0.24em;
-    text-transform: uppercase;
-    margin-bottom: 0.9rem;
-  }
-
-  .software-links a {
-    color: var(--navy);
-    text-decoration: none;
-    font-size: 0.92rem;
-    letter-spacing: 0.02em;
-    margin: 0 0.85rem;
-    padding-bottom: 2px;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.25s ease, color 0.25s ease;
-
-    .sw-desc { color: var(--mid); }
-
-    &:hover {
-      border-color: var(--bronze);
-      .sw-desc { color: var(--bronze); }
-    }
-  }
-}
-
-@media (max-width: 480px) {
-  .software .software-links a { display: block; margin: 0.5rem 0; }
 }
 
 // -------------------------------------------- //
