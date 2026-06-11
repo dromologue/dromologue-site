@@ -107,7 +107,42 @@ body {
   color: var(--mid);
   font-weight: 400;
   line-height: 1.8;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+}
+
+// "What is a dromologue?" — a quiet, just-visible disclosure.
+.meaning {
+  max-width: 30rem;
+  margin: 0.25rem auto 0;
+  text-align: center;
+
+  summary {
+    list-style: none;
+    cursor: pointer;
+    display: inline-block;
+    color: var(--grey);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    border-bottom: 1px dotted #C9C6BF;
+    padding-bottom: 1px;
+    transition: color 0.25s ease, border-color 0.25s ease;
+
+    &::-webkit-details-marker { display: none; }
+    &:hover { color: var(--bronze); border-color: var(--bronze); }
+  }
+
+  &[open] summary { color: var(--mid); }
+
+  .meaning-body {
+    margin: 1rem auto 0;
+    padding-top: 1rem;
+    border-top: 1px solid #ECEAE4;
+    color: var(--mid);
+    font-size: 0.9rem;
+    line-height: 1.7;
+
+    em { color: var(--navy); font-style: italic; }
+  }
 }
 
 // -------------------------------------------- //
@@ -244,3 +279,216 @@ body {
 
 // Hide the dashed separator from the base theme.
 .dashed { display: none; }
+
+// -------------------------------------------- //
+//  Blog: two-column shell (left menu + content)
+// -------------------------------------------- //
+// Break the blog and post layouts out of the centred single column.
+.w--blog,
+.w--post {
+  display: block;
+  min-height: 100vh;
+  max-width: 1040px;
+  text-align: left;
+  padding-top: 5.5rem;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: 232px 1fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+@media (max-width: 760px) {
+  .blog-grid { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+// ---- Left menu / link gallery ----
+.blog-sidebar {
+  text-align: left;
+  font-size: 0.9rem;
+  border-right: 1px solid #ECEAE4;
+  padding-right: 1.6rem;
+  position: sticky;
+  top: 4rem;
+}
+
+@media (max-width: 760px) {
+  .blog-sidebar {
+    position: static;
+    border-right: 0;
+    border-bottom: 1px solid #ECEAE4;
+    padding-right: 0;
+    padding-bottom: 1.6rem;
+  }
+}
+
+.sidebar-home {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: var(--navy);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 2.25rem;
+
+  img { display: block; width: 26px; height: auto; margin: 0; }
+}
+
+.sidebar-section { margin-bottom: 2rem; }
+
+.sidebar-eyebrow {
+  display: block;
+  color: var(--grey);
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 0.7rem;
+}
+
+.sidebar-stream {
+  display: block;
+  text-decoration: none;
+  color: var(--navy);
+  font-weight: 600;
+  line-height: 1.4;
+  transition: color 0.2s ease;
+
+  &:hover { color: var(--bronze); }
+
+  .sidebar-note {
+    display: block;
+    color: var(--mid);
+    font-weight: 400;
+    font-size: 0.78rem;
+    line-height: 1.5;
+    margin-top: 0.25rem;
+  }
+}
+
+.post-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li { margin: 0.5rem 0; line-height: 1.35; }
+
+  a {
+    display: block;
+    text-decoration: none;
+    color: var(--mid);
+    border-left: 2px solid transparent;
+    padding-left: 0.6rem;
+    transition: color 0.2s ease, border-color 0.2s ease;
+
+    &:hover { color: var(--navy); }
+  }
+
+  li.current a {
+    color: var(--navy);
+    font-weight: 600;
+    border-left-color: var(--bronze);
+  }
+}
+
+.sidebar-empty { color: var(--grey); font-style: italic; font-size: 0.85rem; }
+
+// ---- Right content ----
+.blog-main {
+  text-align: left;
+  min-width: 0; // let long content shrink inside the grid track
+
+  a {
+    color: var(--navy);
+    text-decoration: none;
+    border-bottom: 1px solid var(--bronze);
+    transition: color 0.2s ease;
+
+    &:hover { color: var(--bronze); }
+  }
+}
+
+.blog-header h1 {
+  font-size: 1.85rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--navy);
+  margin: 0 0 0.6rem;
+}
+
+.blog-intro {
+  color: var(--mid);
+  font-size: 1.02rem;
+  line-height: 1.75;
+  max-width: 52ch;
+  margin: 0 0 2.5rem;
+}
+
+// ---- Notes feed (blog index) ----
+.post-feed {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    padding: 1.4rem 0;
+    border-bottom: 1px solid #ECEAE4;
+  }
+
+  > li > a {
+    color: var(--navy);
+    font-size: 1.12rem;
+    font-weight: 600;
+    border-bottom: 1px solid transparent;
+
+    &:hover { border-color: var(--bronze); }
+  }
+}
+
+.post-feed-date {
+  display: block;
+  color: var(--grey);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+}
+
+.post-feed-excerpt {
+  color: var(--mid);
+  font-size: 0.92rem;
+  line-height: 1.65;
+  margin: 0.45rem 0 0;
+}
+
+// ---- Single post ----
+.post {
+  .back-link { margin-bottom: 1.5rem; }
+
+  .post-title {
+    font-size: 1.95rem;
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--navy);
+    margin: 0 0 0.4rem;
+  }
+
+  .post-meta {
+    color: var(--grey);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin: 0 0 2.25rem;
+  }
+
+  p, li { color: var(--navy); line-height: 1.85; }
+
+  h2, h3, h4 { color: var(--navy); }
+}

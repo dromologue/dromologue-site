@@ -1,7 +1,26 @@
 ---
-layout: page
-title: Blog
+layout: blog
+title: Writing
 permalink: /blog/
 ---
 
-<p class="coming-soon">Coming soon</p>
+<header class="blog-header">
+  <h1>Writing</h1>
+  <p class="blog-intro">Two streams. <a href="https://organisationalprompts.ai" target="_blank" rel="noopener">Organisational Prompts</a> collects the long-form essays on technology, change and leadership. The notes below track the practice of change inside this business.</p>
+</header>
+
+{% if site.posts.size > 0 %}
+  <ul class="post-feed">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-feed-date">{{ post.date | date: "%-d %B %Y" }}</span>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        {% if post.excerpt %}
+          <p class="post-feed-excerpt">{{ post.excerpt | strip_html | normalize_whitespace | truncate: 180 }}</p>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p class="coming-soon">Notes coming soon.</p>
+{% endif %}

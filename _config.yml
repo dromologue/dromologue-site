@@ -21,6 +21,15 @@ theme_config:
 
 highlighter: rouge
 
+# Drop a YYYY-MM-DD-title.md file into _posts/ and it becomes a page
+# automatically; no need to set layout in each file.
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
 exclude:
   - Brand
   - README.md

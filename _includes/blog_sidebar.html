@@ -1,0 +1,29 @@
+<aside class="blog-sidebar">
+  <a class="sidebar-home" href="{{ '/' | relative_url }}">
+    <img src="{{ '/assets/images/dromologue-mark.png' | relative_url }}" alt="" width="26" />
+    <span>Dromologue</span>
+  </a>
+
+  <nav class="sidebar-section">
+    <span class="sidebar-eyebrow">Essays</span>
+    <a class="sidebar-stream" href="https://organisationalprompts.ai" target="_blank" rel="noopener">
+      Organisational Prompts
+      <span class="sidebar-note">Long-form on technology, change and leadership</span>
+    </a>
+  </nav>
+
+  <nav class="sidebar-section">
+    <span class="sidebar-eyebrow">Notes</span>
+    {% if site.posts.size > 0 %}
+      <ul class="post-menu">
+        {% for post in site.posts %}
+          <li{% if post.url == page.url %} class="current"{% endif %}>
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <span class="sidebar-empty">Coming soon</span>
+    {% endif %}
+  </nav>
+</aside>
