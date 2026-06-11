@@ -5,6 +5,7 @@ layout: default
 <div class="stealth-banner">still in stealth mode</div>
 
 <header class="home-header">
+  <img class="brand-mark" src="/assets/images/dromologue-mark.png" alt="Dromologue mark" width="72" />
   <h1>{{ site.title }}</h1>
   <div class="divider"></div>
   {% if site.theme_config.show_description == true %}
@@ -13,6 +14,12 @@ layout: default
 </header>
 
 {{ content }}
+
+<div class="featured">
+  <a href="https://concepto.dromologue.com">
+    <span class="label">Concepto</span><span class="desc">: a game</span><span class="arrow">&rarr;</span>
+  </a>
+</div>
 
 <nav class="main-nav">
   <a href="/about/">About Us</a>
@@ -28,5 +35,5 @@ layout: default
 {% endif %}
 
 {% if site.theme_config.show_copyright == true %}
-  <div class="copyright">&copy; 2025 Dromologue</div>
+  <div class="copyright">&copy; 2026 Dromologue</div>
 {% endif %}

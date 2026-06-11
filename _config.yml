@@ -21,5 +21,10 @@ theme_config:
 
 highlighter: rouge
 
+exclude:
+  - Brand
+  - README.md
+  - LICENSE.txt
+
 sass:
   style: compressed

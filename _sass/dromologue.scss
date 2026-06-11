@@ -1,100 +1,44 @@
-// Dromologue custom styles
+// Dromologue brand styles
+// Reference: Brand/ref_brand_sheet.png
+// Navy carries the form; bronze carries the action. Paper is the ground.
 
-// Override dark theme colors for true black
+// -------------------------------------------- //
+//  Brand palette
+// -------------------------------------------- //
+:root {
+  --navy:   #101F3B; // the form: body, text, frames, default strokes
+  --bronze: #B8923D; // the accent: one or two focal elements, used sparingly
+  --paper:  #FFFFFF; // the ground
+  --mid:    #3A4A66; // secondary text
+  --grey:   #8A8F99; // muted, reference lines, neutral arrows
+  --green:  #38761D; // special attention only, a flag not a second accent
+}
+
+// Map the moonwalk theme variables onto the brand palette.
+// default.html sets data-theme="dark"; we override that mixin so the one
+// canonical look is navy-on-paper rather than the base theme's near-black.
 @mixin dark-appearance {
   html, body {
-    --headings: #f0f0f0;
-    --links: #f0f0f0;
-    --highlight: #333;
-    --bg: #0a0a0a;
-    --bg-secondary: #111;
-    --text: #999;
-    --text-secondary: #666;
-    --code-text: #f0f0f0;
-    --share-text: #666;
+    --bg: var(--paper);
+    --bg-secondary: #F6F4EF; // warm paper for cards / code
+    --headings: var(--navy);
+    --links: var(--navy);
+    --highlight: rgba(184, 146, 61, 0.18); // bronze wash
+    --text: var(--navy);
+    --text-secondary: var(--mid);
+    --code-text: var(--navy);
+    --share-text: var(--grey);
   }
 }
 
 html[data-theme="dark"] { @include dark-appearance; }
 
-// Stealth banner
-.stealth-banner {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  padding: 0.6rem 0;
-  font-size: 0.75rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  text-align: center;
-  color: #666;
-  background-color: var(--bg);
-  border-bottom: 1px solid #1a1a1a;
-  z-index: 100;
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-// Home header centered layout
-.home-header {
-  text-align: center;
-  padding-top: 4rem;
-
-  h1 {
-    font-size: 2.5rem;
-    font-weight: 300;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    margin-bottom: 1.5rem;
-    color: var(--headings);
-  }
-}
-
-// Divider line
-.divider {
-  width: 40px;
-  height: 1px;
-  background-color: #333;
-  margin: 1.5rem auto;
-}
-
-// Tagline
-.tagline {
-  font-size: 1.1rem;
-  color: var(--text);
-  font-weight: 300;
-  line-height: 1.8;
-  margin-bottom: 2rem;
-}
-
-// Contact link
-.contact {
-  text-align: center;
-  margin-top: 3rem;
-
-  a {
-    color: var(--headings);
-    text-decoration: none;
-    font-size: 0.95rem;
-    letter-spacing: 0.1em;
-    border-bottom: 1px solid #444;
-    padding-bottom: 2px;
-    transition: border-color 0.3s ease;
-
-    &:hover {
-      border-color: var(--headings);
-    }
-  }
-}
-
-// Copyright
-.copyright {
-  text-align: center;
-  font-size: 0.8rem;
-  color: #555;
-  margin-top: 4rem;
-}
-
-// Center the main wrapper
+// Centre the wrapper vertically; keep generous breathing room.
 .w {
   display: flex;
   flex-direction: column;
@@ -103,72 +47,191 @@ html[data-theme="dark"] { @include dark-appearance; }
   text-align: center;
 }
 
-// Hide the dashed separator from moonwalk
-.dashed {
-  display: none;
+// -------------------------------------------- //
+//  Stealth banner
+// -------------------------------------------- //
+.stealth-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0.6rem 0;
+  font-size: 0.7rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--grey);
+  background-color: var(--paper);
+  border-bottom: 1px solid #ECEAE4;
+  z-index: 100;
 }
 
-// Main navigation
+// -------------------------------------------- //
+//  The mark
+// -------------------------------------------- //
+.brand-mark {
+  display: block;
+  width: 72px;
+  height: auto;
+  margin: 0 auto 1.5rem;
+}
+
+// -------------------------------------------- //
+//  Home header
+// -------------------------------------------- //
+.home-header {
+  text-align: center;
+  padding-top: 4rem;
+
+  h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+    color: var(--navy);
+  }
+}
+
+// Bronze divider: the one note of action under the wordmark.
+.divider {
+  width: 48px;
+  height: 2px;
+  background-color: var(--bronze);
+  border: 0;
+  margin: 1.25rem auto;
+}
+
+.tagline {
+  font-size: 1.15rem;
+  color: var(--mid);
+  font-weight: 400;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+// -------------------------------------------- //
+//  Featured: Concepto
+// -------------------------------------------- //
+.featured {
+  text-align: center;
+  margin: 2.5rem 0 1rem;
+
+  a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--navy);
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+    padding: 0.7rem 1.4rem;
+    border: 1px solid var(--bronze);
+    border-radius: 2px;
+    transition: background-color 0.25s ease, color 0.25s ease;
+
+    .label { font-weight: 700; }
+    .desc  { color: var(--mid); }
+    .arrow { color: var(--bronze); margin-left: 0.4rem; }
+
+    &:hover {
+      background-color: var(--bronze);
+      color: var(--paper);
+      .desc, .arrow { color: var(--paper); }
+    }
+  }
+}
+
+// -------------------------------------------- //
+//  Navigation
+// -------------------------------------------- //
 .main-nav {
   text-align: center;
   margin: 2rem 0;
 
   a {
-    color: var(--text);
+    color: var(--mid);
     text-decoration: none;
-    font-size: 0.9rem;
-    letter-spacing: 0.15em;
+    font-size: 0.82rem;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
-    margin: 0 1rem;
-    padding-bottom: 2px;
-    transition: color 0.3s ease;
+    margin: 0 0.9rem;
+    padding-bottom: 3px;
+    border-bottom: 1px solid transparent;
+    transition: color 0.25s ease, border-color 0.25s ease;
 
     &:hover {
-      color: var(--headings);
+      color: var(--navy);
+      border-color: var(--bronze);
     }
   }
 }
 
-// Page header for inner pages
+// -------------------------------------------- //
+//  Contact + copyright
+// -------------------------------------------- //
+.contact {
+  text-align: center;
+  margin-top: 3rem;
+
+  a {
+    color: var(--navy);
+    text-decoration: none;
+    font-size: 0.95rem;
+    letter-spacing: 0.1em;
+    border-bottom: 1px solid var(--bronze);
+    padding-bottom: 2px;
+    transition: color 0.25s ease;
+
+    &:hover { color: var(--bronze); }
+  }
+}
+
+.copyright {
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--grey);
+  margin-top: 4rem;
+}
+
+// -------------------------------------------- //
+//  Inner pages
+// -------------------------------------------- //
 .page-header {
   text-align: center;
   padding-top: 4rem;
 
   h1 {
-    font-size: 2rem;
-    font-weight: 300;
-    letter-spacing: 0.2em;
+    font-size: 1.9rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
-    margin-bottom: 1.5rem;
-    color: var(--headings);
+    margin-bottom: 1.25rem;
+    color: var(--navy);
   }
 }
 
-// Back link
 .back-link {
   display: inline-block;
-  color: var(--text-secondary);
+  color: var(--grey);
   text-decoration: none;
   font-size: 0.85rem;
   letter-spacing: 0.1em;
   margin-bottom: 2rem;
-  transition: color 0.3s ease;
+  transition: color 0.25s ease;
 
-  &:hover {
-    color: var(--headings);
-  }
+  &:hover { color: var(--bronze); }
 }
 
-// Page content
 .page-content-inner {
   text-align: center;
   padding: 2rem 0;
 }
 
-// Coming soon text
 .coming-soon {
-  color: var(--text-secondary);
+  color: var(--mid);
   font-size: 1.1rem;
   font-style: italic;
   margin: 3rem 0;
 }
+
+// Hide the dashed separator from the base theme.
+.dashed { display: none; }
