@@ -7,7 +7,7 @@ layout: default
 <div class="blog-grid">
   {% include blog_sidebar.html %}
   <article class="blog-main post">
-    <a href="{{ '/blog/' | relative_url }}" class="back-link">&larr; Notes</a>
+    <a href="{{ '/blog/' | relative_url }}" class="back-link">&larr; Posts</a>
     <h1 class="post-title">{{ page.title }}</h1>
     <p class="post-meta">{{ page.date | date: "%-d %B %Y" }}</p>
     {{ content }}
