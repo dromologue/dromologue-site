@@ -15,12 +15,6 @@ layout: default
 
 {{ content }}
 
-<div class="featured">
-  <a href="https://concepto.dromologue.com">
-    <span class="label">Concepto</span><span class="desc">: a game</span><span class="arrow">&rarr;</span>
-  </a>
-</div>
-
 <nav class="main-nav">
   <a href="/about/">About Us</a>
   <a href="/perspective/">Our Perspective</a>
@@ -33,6 +27,14 @@ layout: default
     <a href="mailto:justin@dromologue.com">Get in touch</a>
   </div>
 {% endif %}
+
+<div class="software">
+  <span class="software-label">Software</span>
+  <span class="software-links">
+    <a href="https://concepto.dromologue.com">Concepto<span class="sw-desc">: a game</span></a>
+    <a href="https://conceptmapper.dromologue.com/">Concept Mapper<span class="sw-desc">: a tool</span></a>
+  </span>
+</div>
 
 {% if site.theme_config.show_copyright == true %}
   <div class="copyright">&copy; 2026 Dromologue</div>

@@ -111,33 +111,42 @@ body {
 }
 
 // -------------------------------------------- //
-//  Featured: Concepto
+//  Software (footer): Concepto, Concept Mapper
 // -------------------------------------------- //
-.featured {
+.software {
   text-align: center;
-  margin: 2.5rem 0 1rem;
+  margin-top: 3.5rem;
 
-  a {
-    display: inline-block;
-    text-decoration: none;
+  .software-label {
+    display: block;
+    color: var(--grey);
+    font-size: 0.7rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    margin-bottom: 0.9rem;
+  }
+
+  .software-links a {
     color: var(--navy);
-    font-size: 1rem;
-    letter-spacing: 0.04em;
-    padding: 0.7rem 1.4rem;
-    border: 1px solid var(--bronze);
-    border-radius: 2px;
-    transition: background-color 0.25s ease, color 0.25s ease;
+    text-decoration: none;
+    font-size: 0.92rem;
+    letter-spacing: 0.02em;
+    margin: 0 0.85rem;
+    padding-bottom: 2px;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.25s ease, color 0.25s ease;
 
-    .label { font-weight: 700; }
-    .desc  { color: var(--mid); }
-    .arrow { color: var(--bronze); margin-left: 0.4rem; }
+    .sw-desc { color: var(--mid); }
 
     &:hover {
-      background-color: var(--bronze);
-      color: var(--paper);
-      .desc, .arrow { color: var(--paper); }
+      border-color: var(--bronze);
+      .sw-desc { color: var(--bronze); }
     }
   }
+}
+
+@media (max-width: 480px) {
+  .software .software-links a { display: block; margin: 0.5rem 0; }
 }
 
 // -------------------------------------------- //
