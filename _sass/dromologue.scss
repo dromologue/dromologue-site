@@ -67,8 +67,6 @@ body {
   grid-template-columns: 1.55fr 1fr;
   gap: 4rem;
   align-items: start;
-  align-content: center;
-  min-height: calc(100vh - 12rem);
 }
 
 // Let grid children shrink and wrap instead of forcing horizontal overflow.
