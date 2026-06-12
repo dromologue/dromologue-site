@@ -6,12 +6,14 @@
 //  Brand palette
 // -------------------------------------------- //
 :root {
-  --navy:   #101F3B; // the form: body, text, frames, default strokes
-  --bronze: #B8923D; // the accent: one or two focal elements, used sparingly
-  --paper:  #FFFFFF; // the ground
-  --mid:    #3A4A66; // secondary text
-  --grey:   #8A8F99; // muted, reference lines, neutral arrows
-  --green:  #38761D; // special attention only, a flag not a second accent
+  --navy:       #101F3B; // the form: body, text, frames, default strokes
+  --bronze:     #B8923D; // the brand gold: divider, rules, borders, the mark
+  --bronze-ink: #9A7A2E; // bronze for TEXT/accents — darker to pass WCAG contrast
+  --paper:      #FFFFFF; // the ground
+  --mid:        #3A4A66; // secondary text
+  --grey:       #646B7A; // muted label text — darkened from #8A8F99 to meet AA
+  --hairline:   var(--hairline); // 1px dividers / rules
+  --green:      #38761D; // special attention only, a flag not a second accent
 }
 
 // Map the moonwalk theme variables onto the brand palette.
@@ -54,16 +56,19 @@ body {
   display: block;
   text-align: left;
   max-width: 1080px;
-  min-height: 100vh;
   padding-top: 5.5rem;
 }
 
+// Vertically centre the hero in the viewport so the content fills the space
+// rather than top-sticking with a dead gap above a bottom-pinned footer;
+// the footer then peeks just below the fold (no false floor).
 .home-split {
   display: grid;
   grid-template-columns: 1.55fr 1fr;
   gap: 4rem;
   align-items: start;
-  padding-top: 1rem;
+  align-content: center;
+  min-height: calc(100vh - 12rem);
 }
 
 // Let grid children shrink and wrap instead of forcing horizontal overflow.
@@ -71,7 +76,12 @@ body {
 .home-writing { min-width: 0; }
 
 @media (max-width: 820px) {
-  .home-split { grid-template-columns: 1fr; gap: 2.5rem; }
+  .home-split {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    min-height: auto;
+    padding-top: 1rem;
+  }
 }
 
 // ---- Left: brand lockup + thesis + nav ----
@@ -101,7 +111,7 @@ body {
   text-transform: none;
   overflow-wrap: break-word;
 
-  .accent { color: var(--bronze); }
+  .accent { color: var(--bronze-ink); }
 }
 
 // Strapline: the offer, beneath the thesis.
@@ -116,14 +126,14 @@ body {
 // ---- Right: writing column ----
 .home-writing {
   align-self: start;
-  border-left: 1px solid #ECEAE4;
+  border-left: 1px solid var(--hairline);
   padding-left: 2.5rem;
 }
 
 @media (max-width: 820px) {
   .home-writing {
     border-left: 0;
-    border-top: 1px solid #ECEAE4;
+    border-top: 1px solid var(--hairline);
     padding-left: 0;
     padding-top: 2rem;
   }
@@ -147,8 +157,8 @@ body {
   line-height: 1.3;
   transition: color 0.2s ease;
 
-  .ext { color: var(--bronze); font-size: 0.85em; }
-  &:hover { color: var(--bronze); }
+  .ext { color: var(--bronze-ink); font-size: 0.85em; }
+  &:hover { color: var(--bronze-ink); }
 
   .writing-note {
     display: block;
@@ -160,7 +170,7 @@ body {
   }
 }
 
-.writing-rule { height: 1px; background: #ECEAE4; margin: 1.6rem 0; }
+.writing-rule { height: 1px; background: var(--hairline); margin: 1.6rem 0; }
 
 .writing-posts {
   list-style: none;
@@ -198,16 +208,16 @@ body {
   padding-bottom: 1px;
   transition: color 0.2s ease;
 
-  &:hover { color: var(--bronze); }
+  &:hover { color: var(--bronze-ink); }
 }
 
 .writing-empty { color: var(--grey); font-style: italic; font-size: 0.9rem; }
 
-// ---- Footer: sectioned nav + legal row ----
-.home-foot {
+// ---- Footer: sectioned nav + legal row (shared across pages) ----
+.site-foot {
   margin-top: 5.5rem;
   padding-top: 2rem;
-  border-top: 1px solid #ECEAE4;
+  border-top: 1px solid var(--hairline);
 }
 
 .foot-sections {
@@ -242,7 +252,7 @@ body {
     padding: 0.3rem 0;
     transition: color 0.2s ease;
 
-    .ext { color: var(--bronze); font-size: 0.8em; }
+    .ext { color: var(--bronze-ink); font-size: 0.8em; }
     &:hover { color: var(--navy); }
   }
 }
@@ -255,7 +265,7 @@ body {
   gap: 0.5rem 1.75rem;
   margin-top: 3rem;
   padding-top: 1.4rem;
-  border-top: 1px solid #ECEAE4;
+  border-top: 1px solid var(--hairline);
 
   .copyright {
     margin: 0;
@@ -281,52 +291,8 @@ body {
   text-align: center;
   color: var(--grey);
   background-color: var(--paper);
-  border-bottom: 1px solid #ECEAE4;
+  border-bottom: 1px solid var(--hairline);
   z-index: 100;
-}
-
-// -------------------------------------------- //
-//  The mark
-// -------------------------------------------- //
-.brand-mark {
-  display: block;
-  width: 72px;
-  height: auto;
-  margin: 0 auto 1.5rem;
-}
-
-// -------------------------------------------- //
-//  Home header
-// -------------------------------------------- //
-.home-header {
-  text-align: center;
-  padding-top: 4rem;
-
-  h1 {
-    font-size: 2.4rem;
-    font-weight: 700;
-    letter-spacing: 0.34em;
-    text-transform: uppercase;
-    margin-bottom: 1.25rem;
-    color: var(--navy);
-  }
-}
-
-// Bronze divider: the one note of action under the wordmark.
-.divider {
-  width: 48px;
-  height: 2px;
-  background-color: var(--bronze);
-  border: 0;
-  margin: 1.25rem auto;
-}
-
-.tagline {
-  font-size: 1.15rem;
-  color: var(--mid);
-  font-weight: 400;
-  line-height: 1.8;
-  margin-bottom: 1rem;
 }
 
 // "What is a dromologue?" — a quiet, just-visible disclosure.
@@ -347,7 +313,7 @@ body {
     transition: color 0.25s ease, border-color 0.25s ease;
 
     &::-webkit-details-marker { display: none; }
-    &:hover { color: var(--bronze); border-color: var(--bronze); }
+    &:hover { color: var(--bronze-ink); border-color: var(--bronze); }
   }
 
   &[open] summary { color: var(--mid); }
@@ -355,7 +321,7 @@ body {
   .meaning-body {
     margin: 1rem auto 0;
     padding-top: 1rem;
-    border-top: 1px solid #ECEAE4;
+    border-top: 1px solid var(--hairline);
     color: var(--mid);
     font-size: 0.9rem;
     line-height: 1.7;
@@ -365,72 +331,52 @@ body {
 }
 
 // -------------------------------------------- //
-//  Navigation
+//  Inner pages (left-aligned editorial)
 // -------------------------------------------- //
-.main-nav {
-  text-align: center;
-  margin: 2rem 0;
-
-  a {
-    color: var(--mid);
-    text-decoration: none;
-    font-size: 0.82rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    margin: 0 0.9rem;
-    padding-bottom: 3px;
-    border-bottom: 1px solid transparent;
-    transition: color 0.25s ease, border-color 0.25s ease;
-
-    &:hover {
-      color: var(--navy);
-      border-color: var(--bronze);
-    }
-  }
+.w--page {
+  display: block;
+  text-align: left;
+  max-width: 760px;
+  padding-top: 5.5rem;
 }
 
-// -------------------------------------------- //
-//  Contact + copyright
-// -------------------------------------------- //
-.contact {
-  text-align: center;
-  margin-top: 3rem;
+.page-head-wrap { min-width: 0; }
 
-  a {
-    color: var(--navy);
-    text-decoration: none;
-    font-size: 0.95rem;
-    letter-spacing: 0.1em;
-    border-bottom: 1px solid var(--bronze);
-    padding-bottom: 2px;
-    transition: color 0.25s ease;
-
-    &:hover { color: var(--bronze); }
-  }
-}
-
-.copyright {
-  text-align: center;
-  font-size: 0.78rem;
-  color: var(--grey);
-  margin-top: 4rem;
-}
-
-// -------------------------------------------- //
-//  Inner pages
-// -------------------------------------------- //
-.page-header {
-  text-align: center;
-  padding-top: 4rem;
+.page-head {
+  margin-top: 2.5rem;
 
   h1 {
-    font-size: 1.9rem;
+    font-size: clamp(1.6rem, 1rem + 1.5vw, 2.1rem);
     font-weight: 700;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    margin-bottom: 1.25rem;
+    letter-spacing: -0.005em;
+    text-transform: none;
     color: var(--navy);
+    margin: 0;
   }
+}
+
+.page-rule {
+  width: 48px;
+  height: 2px;
+  background-color: var(--bronze);
+  margin: 1.25rem 0 0;
+}
+
+.page-body {
+  margin-top: 2rem;
+  color: var(--navy);
+  line-height: 1.85;
+
+  a {
+    color: var(--navy);
+    text-decoration: none;
+    border-bottom: 1px solid var(--bronze);
+    transition: color 0.2s ease;
+
+    &:hover { color: var(--bronze-ink); }
+  }
+
+  h2, h3, h4 { color: var(--navy); }
 }
 
 .back-link {
@@ -442,12 +388,7 @@ body {
   margin-bottom: 2rem;
   transition: color 0.25s ease;
 
-  &:hover { color: var(--bronze); }
-}
-
-.page-content-inner {
-  text-align: center;
-  padding: 2rem 0;
+  &:hover { color: var(--bronze-ink); }
 }
 
 .coming-soon {
@@ -488,7 +429,7 @@ body {
 .blog-sidebar {
   text-align: left;
   font-size: 0.9rem;
-  border-right: 1px solid #ECEAE4;
+  border-right: 1px solid var(--hairline);
   padding-right: 1.6rem;
   position: sticky;
   top: 4rem;
@@ -498,7 +439,7 @@ body {
   .blog-sidebar {
     position: static;
     border-right: 0;
-    border-bottom: 1px solid #ECEAE4;
+    border-bottom: 1px solid var(--hairline);
     padding-right: 0;
     padding-bottom: 1.6rem;
   }
@@ -538,7 +479,7 @@ body {
   line-height: 1.4;
   transition: color 0.2s ease;
 
-  &:hover { color: var(--bronze); }
+  &:hover { color: var(--bronze-ink); }
 
   .sidebar-note {
     display: block;
@@ -588,7 +529,7 @@ body {
     border-bottom: 1px solid var(--bronze);
     transition: color 0.2s ease;
 
-    &:hover { color: var(--bronze); }
+    &:hover { color: var(--bronze-ink); }
   }
 }
 
@@ -617,7 +558,7 @@ body {
 
   li {
     padding: 1.4rem 0;
-    border-bottom: 1px solid #ECEAE4;
+    border-bottom: 1px solid var(--hairline);
   }
 
   > li > a {

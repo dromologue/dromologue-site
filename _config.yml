@@ -1,7 +1,18 @@
 title: Dromologue
-author: Justin
+tagline: We help you become AI native
 url: https://dromologue.com
-description: Velocity and Value. That is all.
+description: We help organisations become AI native, changing how they operate with AI, not just what they build.
+
+# SEO / social sharing (jekyll-seo-tag)
+author:
+  name: Justin Arbuckle
+logo: /assets/images/dromologue-mark.png
+twitter:
+  card: summary_large_image
+social:
+  name: Dromologue
+  links:
+    - https://organisationalprompts.ai
 
 permalink: /:slug
 
@@ -21,9 +32,17 @@ theme_config:
 
 highlighter: rouge
 
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
 # Drop a YYYY-MM-DD-title.md file into _posts/ and it becomes a page
 # automatically; no need to set layout in each file.
 defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/images/og-default.png
   - scope:
       path: ""
       type: posts

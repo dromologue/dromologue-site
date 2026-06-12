@@ -44,40 +44,4 @@ layout: default
   </aside>
 </div>
 
-<footer class="home-foot">
-  <div class="foot-sections">
-    <nav class="foot-col">
-      <span class="foot-label">Practice</span>
-      <a href="/about/">About</a>
-      <a href="/perspective/">Our Perspective</a>
-      <a href="/services/">Services</a>
-    </nav>
-
-    <nav class="foot-col">
-      <span class="foot-label">Writing</span>
-      <a href="https://organisationalprompts.ai" target="_blank" rel="noopener">Organisational Prompts <span class="ext">&#8599;</span></a>
-      <a href="/blog/">Blog</a>
-    </nav>
-
-    <nav class="foot-col">
-      <span class="foot-label">Software</span>
-      <a href="https://concepto.dromologue.com">Concepto</a>
-      <a href="https://conceptmapper.dromologue.com/">Concept Mapper</a>
-    </nav>
-
-    <nav class="foot-col">
-      <span class="foot-label">Connect</span>
-      <a href="mailto:justin@dromologue.com">Get in touch</a>
-    </nav>
-  </div>
-
-  <div class="foot-bottom">
-    {% if site.theme_config.show_copyright == true %}
-      <span class="copyright">&copy; 2026 Dromologue</span>
-    {% endif %}
-    <details class="meaning">
-      <summary>What is a dromologue?</summary>
-      <p class="meaning-body">Dromologue joins two Greek roots: <em>dromos</em>, speed, and <em>logos</em>, meaning. The purpose of this business is to enable business speed that produces meaningful results for employees, customers and stakeholders.</p>
-    </details>
-  </div>
-</footer>
+{% include site_footer.html %}

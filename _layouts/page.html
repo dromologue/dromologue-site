@@ -4,14 +4,20 @@ layout: default
 
 <div class="stealth-banner">still in stealth mode</div>
 
-<header class="page-header">
-  <a href="/" class="back-link">&larr; Dromologue</a>
-  <h1>{{ page.title }}</h1>
-  <div class="divider"></div>
-</header>
+<div class="page-head-wrap">
+  <a class="lead-brand" href="{{ '/' | relative_url }}">
+    <img class="lead-mark" src="{{ '/assets/images/dromologue-mark.png' | relative_url }}" alt="Dromologue" width="40" />
+    <span class="lead-word">Dromologue</span>
+  </a>
 
-<div class="page-content-inner">
-  {{ content }}
+  <header class="page-head">
+    <h1>{{ page.title }}</h1>
+    <div class="page-rule"></div>
+  </header>
+
+  <div class="page-body">
+    {{ content }}
+  </div>
 </div>
 
-<div class="copyright">&copy; 2026 Dromologue</div>
+{% include site_footer.html %}
