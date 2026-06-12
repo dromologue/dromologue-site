@@ -4,3 +4,5 @@
 .sass-cache
 _site
 .tmp.driveupload
+
+.claude/settings.local.json

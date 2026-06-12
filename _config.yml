@@ -53,6 +53,7 @@ exclude:
   - Brand
   - README.md
   - LICENSE.txt
+  - tasks
 
 sass:
   style: compressed
