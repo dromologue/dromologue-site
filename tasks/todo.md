@@ -8,16 +8,16 @@ _Last updated: 2026-06-12. The site is **pre-launch** ("still in stealth mode" b
 - [ ] Confirm final **hero copy** and the **Services headline** ("We redesign how your organisation works with AI" was my choice, not supplied).
 
 ## Credibility before launch
-- [ ] **Source-anchor the Perspective statistics** — BCG 10/20/70, McKinsey "twice as likely", the abandonment-rate doubling, and the EU AI Act figures (€35m / 7%, Aug 2026). Add footnote-style citations or a sources note so they're defensible in front of buyers.
+- [x] **Source-anchor the Perspective statistics** — done 2026-06-12. Inline links to S&P Global, BCG, McKinsey, EUR-Lex; corrected the McKinsey ("nearly three times", dropped the unsupported sequencing) and EU AI Act (€35m/7% is the top tier, not high-risk) wording. _Human click-through of each link still advisable (corporate domains bot-block, so couldn't auto-verify)._
 - [ ] **Remove / replace the "still in stealth mode" banner** at launch (`_includes/` + `.stealth-banner`).
 
 ## Email
-- [ ] **Send a test** to transform@dromologue.com from an external account; confirm it lands in jdfarbuckle@gmail.com.
+- [x] **Send a test** to transform@dromologue.com — confirmed working (2026-06-12).
 - [ ] Optional: add a **catch-all** (any @dromologue.com → Gmail) or extra aliases — currently only `transform@` forwards, everything else bounces.
 - [ ] Optional: set up **send-as transform@** (SMTP) if outbound from that address is wanted.
 
 ## Verification / QA
-- [ ] **Check the homepage on a real phone** — the local headless browser couldn't render a trustworthy mobile width. CSS is responsive (hero stacks ≤820px, footer 2-up ≤680px) but unverified on-device.
+- [x] **Check the homepage on a real phone** — confirmed working (2026-06-12).
 - [ ] **Validate the OG share card** via LinkedIn Post Inspector / X card validator (tags + `/assets/images/og-default.png` are in place).
 - [ ] Re-check colour **contrast** if any brand colours change (text uses darkened `--bronze-ink`; bright bronze reserved for rules/borders).
 
