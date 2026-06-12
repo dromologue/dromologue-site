@@ -1,0 +1,32 @@
+---
+layout: page
+eyebrow: Contact
+title: Let's talk
+permalink: /contact/
+---
+
+<p class="lede">Tell us what you are trying to do with AI, where it is stuck, or simply that you would like to talk. We read everything ourselves.</p>
+
+<form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/contact/thanks/" class="contact-form">
+  <input type="hidden" name="form-name" value="contact" />
+  <p class="hp-field"><label>Leave this empty if you are human: <input name="bot-field" /></label></p>
+
+  <div class="field">
+    <label for="name">Name</label>
+    <input id="name" type="text" name="name" autocomplete="name" required />
+  </div>
+
+  <div class="field">
+    <label for="email">Email</label>
+    <input id="email" type="email" name="email" autocomplete="email" required />
+  </div>
+
+  <div class="field">
+    <label for="message">Your idea</label>
+    <textarea id="message" name="message" rows="6" required></textarea>
+  </div>
+
+  <button type="submit" class="form-submit">Send <span class="arrow">&rarr;</span></button>
+</form>
+
+<p class="contact-fallback">Prefer email? Write to <a href="mailto:transform@dromologue.com">transform@dromologue.com</a>.</p>
