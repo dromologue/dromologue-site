@@ -113,12 +113,13 @@ body {
 }
 
 // Strapline: the offer, beneath the thesis.
+// Explainer line tucked under the wordmark, banner-style.
 .lead-strap {
-  margin: 1.6rem 0 0;
-  font-size: 1.2rem;
+  margin: 0.9rem 0 0;
+  font-size: 1.1rem;
   font-weight: 600;
   line-height: 1.5;
-  color: var(--navy);
+  color: var(--mid);
 }
 
 // ---- Right: writing column ----
