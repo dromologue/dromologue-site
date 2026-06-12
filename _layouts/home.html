@@ -19,27 +19,18 @@ layout: default
   </section>
 
   <aside class="home-writing">
-    <span class="writing-eyebrow">Writing</span>
-
-    <a class="writing-stream" href="https://organisationalprompts.ai" target="_blank" rel="noopener">
-      Organisational Prompts <span class="ext">&#8599;</span>
-      <span class="writing-note">Long-form essays on technology, change and leadership</span>
-    </a>
-
-    <div class="writing-rule"></div>
+    <span class="writing-eyebrow">Latest writing</span>
 
     {% if site.posts.size > 0 %}
-      <ul class="writing-posts">
-        {% for post in site.posts limit: 3 %}
-          <li>
-            <span class="wp-date">{{ post.date | date: "%-d %b %Y" }}</span>
-            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-          </li>
-        {% endfor %}
-      </ul>
-      <a class="writing-all" href="/blog/">All posts &rarr;</a>
+      {% assign latest = site.posts.first %}
+      <article class="writing-latest">
+        <span class="wp-date">{{ latest.date | date: "%-d %b %Y" }}</span>
+        <a class="writing-title" href="{{ latest.url | relative_url }}">{{ latest.title }}</a>
+        <p class="writing-excerpt">{{ latest.excerpt | strip_html | normalize_whitespace | truncate: 150 }}</p>
+      </article>
+      <a class="writing-all" href="/blog/">More writing &rarr;</a>
     {% else %}
-      <p class="writing-empty">Posts coming soon.</p>
+      <p class="writing-empty">Writing coming soon.</p>
     {% endif %}
   </aside>
 </div>
