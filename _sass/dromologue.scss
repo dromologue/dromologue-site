@@ -423,6 +423,25 @@ body {
   }
 }
 
+// Diagrams (e.g. the J-curve). Allowed to breathe a little wider than the
+// reading column on larger screens for impact.
+.diagram {
+  margin: 3rem 0;
+
+  svg { display: block; width: 100%; height: auto; }
+
+  figcaption {
+    margin-top: 1rem;
+    color: var(--grey);
+    font-size: 0.82rem;
+    line-height: 1.55;
+  }
+}
+
+@media (min-width: 900px) {
+  .diagram { margin-left: -70px; margin-right: -70px; }
+}
+
 .back-link {
   display: inline-block;
   color: var(--grey);

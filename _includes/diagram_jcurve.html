@@ -1,0 +1,36 @@
+<figure class="diagram">
+  <svg viewBox="0 0 1060 600" role="img" aria-labelledby="jc-t jc-d" font-family="Inter, sans-serif" preserveAspectRatio="xMidYMid meet">
+    <title id="jc-t">The productivity J-curve of AI investment</title>
+    <desc id="jc-d">Returns dip while the intangible investment is paid down, then recover. Without operating-model redesign they plateau modestly above the starting level; with redesign they keep climbing. The gap between the two is forgone return.</desc>
+    <defs>
+      <marker id="jcah" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#101F3B"/></marker>
+      <marker id="jcd2" markerWidth="12" markerHeight="12" refX="5" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#101F3B"/></marker>
+    </defs>
+
+    <line x1="120" y1="112" x2="905" y2="112" stroke="#9AA0AB" stroke-width="4" stroke-dasharray="15 12"/>
+    <text x="120" y="96" fill="#646B7A" font-size="24">Investment (continues regardless)</text>
+
+    <line x1="120" y1="368" x2="1000" y2="368" stroke="#D2D2CC" stroke-width="2"/>
+    <text x="124" y="358" fill="#9AA0AB" font-size="20" font-style="italic">original starting level</text>
+
+    <line x1="120" y1="545" x2="120" y2="58" stroke="#101F3B" stroke-width="3" marker-end="url(#jcah)"/>
+    <line x1="120" y1="545" x2="1005" y2="545" stroke="#101F3B" stroke-width="3" marker-end="url(#jcah)"/>
+    <text transform="translate(46,300) rotate(-90)" text-anchor="middle" fill="#101F3B" font-size="26">Measured business return</text>
+    <text x="562" y="592" text-anchor="middle" fill="#101F3B" font-size="26">Time since AI investment begins</text>
+
+    <path d="M120,360 C 210,392 255,470 300,472 C 352,474 432,432 478,360 C 585,340 742,248 905,194" fill="none" stroke="#B8923D" stroke-width="7" stroke-linecap="round"/>
+    <path d="M120,360 C 210,392 255,470 300,472 C 352,474 432,432 478,360 C 560,336 606,324 652,322 L 905,322" fill="none" stroke="#101F3B" stroke-width="8" stroke-linecap="round" stroke-dasharray="0.5 19"/>
+
+    <circle cx="300" cy="472" r="7" fill="#101F3B"/>
+    <text x="300" y="505" text-anchor="middle" fill="#101F3B" font-size="22">the dip: cost of the</text>
+    <text x="300" y="531" text-anchor="middle" fill="#101F3B" font-size="22">intangible investment</text>
+
+    <line x1="905" y1="206" x2="905" y2="310" stroke="#101F3B" stroke-width="2.5" marker-start="url(#jcd2)" marker-end="url(#jcd2)"/>
+    <text x="922" y="250" fill="#101F3B" font-size="23" font-style="italic">forgone</text>
+    <text x="922" y="278" fill="#101F3B" font-size="23" font-style="italic">return</text>
+
+    <text x="690" y="168" fill="#9A7A2E" font-size="27" font-weight="700">Return with redesign</text>
+    <text x="600" y="352" fill="#101F3B" font-size="22" font-weight="700">Return without redesign: the plateau</text>
+  </svg>
+  <figcaption>The productivity J-curve. Without redesigning how the organisation operates, AI returns settle into a plateau barely above where they started. The gap to what redesign would have earned is forgone return.</figcaption>
+</figure>
