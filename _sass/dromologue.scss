@@ -12,7 +12,7 @@
   --paper:      #FFFFFF; // the ground
   --mid:        #3A4A66; // secondary text
   --grey:       #646B7A; // muted label text — darkened from #8A8F99 to meet AA
-  --hairline:   var(--hairline); // 1px dividers / rules
+  --hairline:   #ECEAE4; // 1px dividers / rules
   --green:      #38761D; // special attention only, a flag not a second accent
 }
 
@@ -656,5 +656,30 @@ body {
 
   p, li { color: var(--navy); line-height: 1.85; }
 
-  h2, h3, h4 { color: var(--navy); }
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: -0.005em;
+    color: var(--navy);
+    margin: 2.75rem 0 0.6rem;
+  }
+  h3, h4 { color: var(--navy); }
+
+  // Standfirst / dek under the title.
+  .standfirst {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--mid);
+    margin: 0 0 2.25rem;
+  }
+
+  // Sources note at the foot of the essay.
+  .post-sources {
+    font-size: 0.8rem;
+    line-height: 1.65;
+    color: var(--grey);
+    border-top: 1px solid var(--hairline);
+    margin-top: 3.5rem;
+    padding-top: 1.5rem;
+  }
 }
