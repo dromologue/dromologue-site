@@ -471,6 +471,57 @@ body {
 .dashed { display: none; }
 
 // -------------------------------------------- //
+//  Tag cloud + tag pills
+// -------------------------------------------- //
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.tag-pill {
+  display: inline-block;
+  padding: 0.2rem 0.65rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: lowercase;
+  background: transparent;
+  color: var(--mid);
+  border: 1px solid var(--hairline);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+
+  &:hover { border-color: var(--bronze); color: var(--bronze-ink); }
+  &.active { background: var(--navy); color: var(--paper); border-color: var(--navy); }
+}
+
+// Inline tags on the post feed and post meta line.
+.post-tags,
+.post-meta-tags {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-left: 0.6rem;
+  vertical-align: middle;
+}
+
+.post-tag {
+  display: inline-block;
+  padding: 0.1rem 0.5rem;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
+  color: var(--bronze-ink);
+  border: 1px solid currentColor;
+  border-radius: 2px;
+  opacity: 0.8;
+}
+
+// -------------------------------------------- //
 //  Contact form
 // -------------------------------------------- //
 .contact-form {

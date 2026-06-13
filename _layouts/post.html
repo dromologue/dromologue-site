@@ -9,7 +9,7 @@ layout: default
   <article class="blog-main post">
     <a href="{{ '/blog/' | relative_url }}" class="back-link">&larr; Posts</a>
     <h1 class="post-title">{{ page.title }}</h1>
-    <p class="post-meta">{{ page.date | date: "%-d %B %Y" }}</p>
+    <p class="post-meta">{{ page.date | date: "%-d %B %Y" }}{% if page.tags.size > 0 %}<span class="post-meta-tags">{% for tag in page.tags %}<span class="post-tag">{{ tag | replace: '-', ' ' }}</span>{% endfor %}</span>{% endif %}</p>
     {{ content }}
   </article>
 </div>

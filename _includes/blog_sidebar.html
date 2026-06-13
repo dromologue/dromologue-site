@@ -4,6 +4,19 @@
     <span>Dromologue</span>
   </a>
 
+  {% if site.tags.size > 0 %}
+  <nav class="sidebar-section">
+    <span class="sidebar-eyebrow">Topics</span>
+    <div class="tag-cloud">
+      <button class="tag-pill active" data-tag="all">All</button>
+      {% assign sorted_tags = site.tags | sort %}
+      {% for tag in sorted_tags %}
+        <button class="tag-pill" data-tag="{{ tag[0] }}">{{ tag[0] | replace: '-', ' ' }}</button>
+      {% endfor %}
+    </div>
+  </nav>
+  {% endif %}
+
   <nav class="sidebar-section">
     <span class="sidebar-eyebrow">Posts</span>
     {% if site.posts.size > 0 %}
@@ -19,3 +32,28 @@
     {% endif %}
   </nav>
 </aside>
+
+<script>
+(function() {
+  var pills = document.querySelectorAll('.tag-pill');
+  var feed  = document.getElementById('post-feed');
+  if (!feed) return;
+  var items = Array.from(feed.querySelectorAll('li[data-tags]'));
+
+  pills.forEach(function(pill) {
+    pill.addEventListener('click', function() {
+      var tag = this.dataset.tag;
+      pills.forEach(function(p) { p.classList.remove('active'); });
+      this.classList.add('active');
+      items.forEach(function(li) {
+        if (tag === 'all') {
+          li.style.display = '';
+        } else {
+          var tags = li.dataset.tags ? li.dataset.tags.split(' ') : [];
+          li.style.display = tags.indexOf(tag) > -1 ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
