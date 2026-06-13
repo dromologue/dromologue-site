@@ -302,38 +302,29 @@ body {
 }
 
 // "What is a dromologue?" — a quiet, just-visible disclosure.
+// Etymology line: label + explanation inline.
 .meaning {
-  max-width: 34rem;
-  margin: 1.75rem 0 0;
-  text-align: left;
+  margin: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
 
-  summary {
-    list-style: none;
-    cursor: pointer;
-    display: inline-block;
-    color: var(--grey);
-    font-size: 0.72rem;
-    letter-spacing: 0.08em;
-    border-bottom: 1px dotted #C9C6BF;
-    padding-bottom: 1px;
-    transition: color 0.25s ease, border-color 0.25s ease;
+.meaning-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--grey);
+  white-space: nowrap;
+}
 
-    &::-webkit-details-marker { display: none; }
-    &:hover { color: var(--bronze-ink); border-color: var(--bronze); }
-  }
+.meaning-body {
+  font-size: 0.78rem;
+  color: var(--grey);
+  line-height: 1.5;
 
-  &[open] summary { color: var(--mid); }
-
-  .meaning-body {
-    margin: 1rem auto 0;
-    padding-top: 1rem;
-    border-top: 1px solid var(--hairline);
-    color: var(--mid);
-    font-size: 0.9rem;
-    line-height: 1.7;
-
-    em { color: var(--navy); font-style: italic; }
-  }
+  em { font-style: italic; color: var(--mid); }
 }
 
 // -------------------------------------------- //
