@@ -11,8 +11,6 @@ twitter:
   card: summary_large_image
 social:
   name: Dromologue
-  links:
-    - https://organisationalprompts.ai
 
 permalink: /:slug
 
