@@ -4,7 +4,7 @@ date: 2026-06-12
 description: The gap between how fast AI compounds and how slowly organisations change, not the models, is what holds back AI value. Why operating-model redesign decides who profits.
 ---
 
-The technology is compounding on a cadence of months. Organisations change on a cadence of years. The gap between those two clocks, not any limitation of the models themselves, is what will hold back the full exploitation of AI. The evidence for this is now overwhelming, and the firms that act on it first will own the next decade.
+The technology is compounding at a cadence of months. Organisations change at a cadence of years. The gap between those two clocks, not any limitation of the models themselves, is what will hold back the full exploitation of AI. The evidence for this is now overwhelming, and the firms that act on it first will own the next decade.
 {:.standfirst}
 
 ## The fast clock
