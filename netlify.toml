@@ -4,3 +4,8 @@
 
 [build.environment]
   RUBY_VERSION = "3.2.2"
+
+[[redirects]]
+  from = "/*"
+  to = "/"
+  status = 200
